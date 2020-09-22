@@ -1,0 +1,32 @@
+@import "../bootstrap/scss/functions"
+@import "../bootstrap/scss/variables"
+@import "../bootstrap/scss/mixins/breakpoints"
+
+$bg:#1e4e76
+$btn_bg:#1e4e76
+$nav_bg:#1e4e76
+
+.navbtn
+  display: none
+html
+  scroll-behavior: smooth
+
+@include media-breakpoint-down(md)
+  #nav
+    height: 100vh
+    display: none
+    ul
+      height: 100vh
+  .show
+    display: block!important
+
+h1,h2,h3,h4,h5,h6,p,a,strong,em,small
+  font-family: Microsoft YaHei
+#top
+  height: 100vh
+.oh
+  overflow: hidden
+.bg
+  background-color: $bg!important
+.nav-link.active
+  background-color: $nav_bg!important

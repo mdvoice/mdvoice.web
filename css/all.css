@@ -1,0 +1,40 @@
+.navbtn {
+  display: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (max-width: 991.98px) {
+  #nav {
+    height: 100vh;
+    display: none;
+  }
+  #nav ul {
+    height: 100vh;
+  }
+
+  .show {
+    display: block !important;
+  }
+}
+h1, h2, h3, h4, h5, h6, p, a, strong, em, small {
+  font-family: Microsoft YaHei;
+}
+
+#top {
+  height: 100vh;
+}
+
+.oh {
+  overflow: hidden;
+}
+
+.bg {
+  background-color: #1e4e76 !important;
+}
+
+.nav-link.active {
+  background-color: #1e4e76 !important;
+}
