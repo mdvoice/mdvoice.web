@@ -3,9 +3,11 @@ $(function() {
   var md = markdownit({
     html: true,
     typographer: true
-  }).use(markdownitEmoji)
-  console.log(markdownit().render($("#md").html()));
-  console.log($("#md").html());
+  })
+  .use(markdownitEmoji)
+  .use(markdownitMark);
+  // console.log(markdownit().render($("#md").html()));
+  // console.log($("#md").html());
   $("#md").html(md.render($("#md").html().replace(/&gt;/g,">").replace(/&lt;/g,"<")));
   // $("#md").html(markdownit().render($("#md pre").text()));
 })
