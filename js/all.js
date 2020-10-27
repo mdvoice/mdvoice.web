@@ -1,14 +1,33 @@
+var offset;
+
+
 $(function() {
-  AOS.init();
-  $(".navbtn").on('click',  function(event) {
-    event.preventDefault();
-    $("#nav").toggleClass(['animate__fadeIn','show']);
+  // var rellax = new Rellax('.rellax');
+  offset = ($("#nav").css("width") == "0px") ? 0 : -60;
+  $(window).resize(function(event) {
+    offset = ($("#nav").css("width") == "0px") ? 0 : -60;
   });
+  s();
+  // paula=new paula();
+  // $(window).scroll(function(event) {
+  //   paula.scroll();
+  // });
+  // $(".navbtn").on('click',  function(event) {
+  //   event.preventDefault();
+  //   $("#nav").toggleClass(['animate__fadeIn','show']);
+  // });
   $(".nav-link").on('click', function(event) {
-    $("#nav").removeClass(['animate__fadeIn','show']);
+    $("#open")[0].click();
   });
+  // tks https://stackoverflow.com/a/37883208
+
+  // $(window).resize(function(event) {
+  // s();
+  // });
 });
 
+function s() {
+}
 
 /*
 var an=function () {
