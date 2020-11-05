@@ -5,7 +5,8 @@ $(function() {
     typographer: true
   })
   .use(markdownitEmoji)
-  .use(markdownitMark);
+  .use(markdownitMark)
+  .use(markdownitFootnote);
   // console.log(markdownit().render($("#md").html()));
   // console.log($("#md").html());
   $("#md").html(md.render($("#md").html().replace(/&gt;/g,">").replace(/&lt;/g,"<")));
