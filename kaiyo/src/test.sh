@@ -1,2 +1,3 @@
-g++ main.cpp -o main
+clear
+g++ main.cpp -o main 
 ./main
