@@ -6,7 +6,7 @@
 	<meta charset="utf-8">
 	<title>明道中學青流社</title>
 
-	
+	<!-- 設定 icon -->
 	<link rel="apple-touch-icon" sizes="57x57" href="/icons/icon.svg">
 	<link rel="apple-touch-icon" sizes="60x60" href="/icons/icon.svg">
 	<link rel="apple-touch-icon" sizes="72x72" href="/icons/icon.svg">
@@ -25,14 +25,14 @@
 	<meta name="msapplication-TileImage" content="/icons/icon.svg">
 	<meta name="theme-color" content="#ffffff">
 
-	
+	<!-- 引入 style-->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
 	 crossorigin="anonymous">
 	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
 	 crossorigin="anonymous" />
 	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-	
+	<!-- 引入 script -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
 
 	</script>
@@ -52,20 +52,20 @@
 
 	</script>
 
-	
+	<!-- 引入 self files -->
 	<link rel="stylesheet" href="/css/all.css">
 	<link rel="stylesheet" href="/css/index.css">
 	<script type="text/javascript" src="/js/all.js">
 
 	</script>
-	
+	<!-- <script type="text/javascript" src="/js/paula.js"></script> -->
 	<script type="text/javascript" src="/js/index.js">
 
 	</script>
 </head>
 
 <body data-spy="scroll" data-target="#nav" data-offset="60" class="bg">
-	
+	<!-- 導覽列 -->
 	<div class="fixed-top">
 		<input type="checkbox" name="nav" value="nav" id="open">
     <label for="open" role="button" class="btn h4 bg-dark text-light m-3 show"><i class="fas fa-bars"></i></label>
@@ -93,9 +93,9 @@
       </ul>
     </nav>
   </div>
-  
+  <!-- 封面 -->
   <div class="jumbotron bg rounded-0 d-flex justify-content-center align-items-center oh m-0 hv" id="top">
-    
+    <!-- 商標 -->
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 86 86" class="img-fluid rounded-circle icon bg-light rellax paula" alt="icon">
       <g id="Layer" class="water">
         <path id="Layer" d="M45.5 30.5C45.5 41.2 41.5 41.2 41.5 51.8C41.5 62.5 45.5 62.5 45.5 73.1C45.5 83.8 41.5 83.8 41.5 94.4" />
@@ -112,25 +112,20 @@
       </g>
     </svg>
   </div>
-  
+  <!-- 關於 -->
   <div class="container-fluid text-center p-0 hv oh bg-light" id="about">
-    
+    <!-- 背景 -->
     <div class="fbg h-100 w-100 zbg"></div>
     <div class="d-flex justify-content-center align-items-center h-100">
       <div class="col-md-6 " data-aos="fade-up">
         <h1 class="m-5">社團簡介</h1>
         <p class="h4">
-我們是明道中學的一個課內社團，宗旨在促進時事討論和青年對話分享，不時邀請校外講師演講。歡迎所有明道中學師生加入我們的大家庭。
-詳細說明討論時事、聆聽歧見、關注社會角落、眼觀國際大事。
-青年、青春、用活力看世界。 思辨、反思、我思故我在。
-一股清流，卻不畏世間的骯髒。因為忽視，無法改變問題。 勇敢闖蕩，小兵也可立大功，學生亦能成大事。
-家事國事天下事，事事關心 誰說學生不可以？
-
+					{{- template "社團簡介"}}
         </p>
       </div>
     </div>
   </div>
-  
+  <!-- 幹部列表 -->
   <div class="container-fluid hv oh bg" id="cadre">
     <div id="member" class="carousel slide h-100 " data-ride="carousel" data-aos="zoom-in-up">
       <ol class="carousel-indicators">
@@ -150,8 +145,7 @@
             </div>
             <div class="col-md-3 m-auto">
               <p class="h4">
-大帥哥
-
+								{{- template "社長"}}
 							</p>
             </div>
           </div>
@@ -163,8 +157,7 @@
             </div>
             <div class="col-md-3 m-auto">
               <p class="h4">
-
-
+								{{- template "副社"}}
 								</p>
             </div>
           </div>
@@ -176,8 +169,7 @@
             </div>
             <div class="col-md-3 m-auto">
               <p class="h4">
-
-
+								{{- template "美宣"}}
 								</p>
             </div>
           </div>
@@ -189,8 +181,7 @@
             </div>
             <div class="col-md-3 m-auto">
               <p class="h4">
-
-
+								{{- template "公關"}}
 								</p>
             </div>
           </div>
@@ -202,8 +193,7 @@
             </div>
             <div class="col-md-3 m-auto">
               <p class="h4">
-
-
+								{{- template "總務"}}
 							</p>
             </div>
           </div>
@@ -229,7 +219,7 @@
       </a>
     </div>
   </div>
-  
+  <!-- 公告事項 -->
   <div class="container-fluid hv oh p-3 bg-light" id="declaration">
     <h1 class="text-center" data-aos="fade-up-left">公告事項</h1>
     <ul class="list-group list-group-flush text-nowrap shadow rounded h-75 oys" data-aos="fade-up-right">
@@ -247,18 +237,17 @@
       </li>
     </ul>
   </div>
-  
+  <!-- 每日一句 -->
   <div class="container text-light text-center hv oh " id="sentence">
     <h1 class="p-3" data-aos="fade-down">每日一句</h1>
     <div class="d-flex align-items-center h-50">
       <p class="h4" data-aos="flip-down">
-幹話有益健康
-
+				{{- template "每日一句"}}
 			</p>
 
     </div>
   </div>
-  
+  <!-- 頁尾 -->
   <footer class="navbar bg-dark border-top border-dark rounded-top text-light">
     <section>
       <small>
