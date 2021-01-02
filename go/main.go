@@ -11,8 +11,13 @@ var (
 	tmpl = "template/"
 	md   = "markdown/"
 	out  = "public/html/"
-	news []string
+	des  [][]string
 )
+
+// type index struct {
+// 	首頁 map[string]string
+// 	公告 []interface{}
+// }
 
 func main() {
 
@@ -30,8 +35,11 @@ func main() {
 	checknil(err)
 	// news := make([]string, len(mds))
 	for i, el := range mds {
-		value := getvalue(md + "活動/" + el.Name() + "/index.md")
-		file, err := template.ParseFiles(tmpl + "activity.html")
+		mdfile := md + "活動/" + el.Name() + "/index.md"
+		value := getvalue(mdfile)
+		file, err := template.New("tmpl").
+			Funcs(template.FuncMap{"kaiyo": func() string { return "" }}).
+			ParseFiles(tmpl+"activity.html", mdfile)
 		checknil(err)
 		err = os.Mkdir(out+el.Name(), os.ModePerm)
 		checknil(err)
@@ -39,20 +47,23 @@ func main() {
 		checknil(err)
 		err = file.Execute(put, value)
 		checknil(err)
-		news = append(news, value["簡介"])
-		fmt.Printf("activity done! %d / %d", i+1, len(mds))
+		des = append(des, []string{el.Name(), value["簡介"]})
+		fmt.Printf("activity done! %d / %d \n", i+1, len(mds))
 	}
-	// b, err := json.MarshalIndent(temp, "", "  ")
-	// checknil(err)
-	// fmt.Print(string(b))
 
 	file, err := template.ParseFiles(tmpl + "index.html")
 	checknil(err)
 	value := getvalue(md + "首頁.gtpl")
 	put, err := os.Create(out + "index.html")
 	checknil(err)
-	value["最新消息"] = news
-	err = file.Execute(put, value)
+	exe := struct {
+		Home map[string]string
+		News [][]string
+	}{
+		Home: value,
+		News: des,
+	}
+	err = file.Execute(put, exe)
 	checknil(err)
 	fmt.Printf("index done! \n")
 
