@@ -1,0 +1,59 @@
+html,body
+  scroll-behavior: smooth
+
+#md
+  a
+    background-color: white
+    border-radius: 0.2em
+    padding: 0.1em
+    padding-left: 0.2em
+    padding-right: 0.2em
+  hr
+    border-color: white
+  img,iframe
+    max-width: 100%
+    // height: auto
+    border-radius: 0.5rem
+    display: block
+    margin: auto
+  pre
+    color: red
+  blockquote
+    margin-left: 0.2em
+    p
+      padding-left: 0.2em
+      border-left: 0.2em solid lightgrey
+      border-radius: 0.2em
+      // color: lightgrey
+      font-weight: lighter
+      font-style: italic
+      line-height: 2em
+      padding: 1rem
+  table
+    border-collapse: separate
+    border: 0.2rem solid lightgrey
+    border-radius: 0.2rem
+    font-weight: bolder
+    th
+      font-weight: bolder
+    th,td
+        padding: 1em
+  mark
+    color: var(--light)
+    background-color: transparent
+    position: relative
+    &::before
+      content: ""
+      position: absolute
+      width: 100%
+      height: 0.2em
+      bottom: 0
+      background-color: yellow
+      border-radius: 0.2em
+    &:hover
+      transition: 0.5s 0.2s
+      color: yellow
+      &::before
+        transition: 0.3s 0.2s height
+        height: 2em
+        background-color: transparent

@@ -7,22 +7,22 @@
 	<title>明道中學青流社</title>
 
 	<!-- 設定 icon -->
-	<link rel="apple-touch-icon" sizes="57x57" href="/icons/icon.svg">
-	<link rel="apple-touch-icon" sizes="60x60" href="/icons/icon.svg">
-	<link rel="apple-touch-icon" sizes="72x72" href="/icons/icon.svg">
-	<link rel="apple-touch-icon" sizes="76x76" href="/icons/icon.svg">
-	<link rel="apple-touch-icon" sizes="114x114" href="/icons/icon.svg">
-	<link rel="apple-touch-icon" sizes="120x120" href="/icons/icon.svg">
-	<link rel="apple-touch-icon" sizes="144x144" href="/icons/icon.svg">
-	<link rel="apple-touch-icon" sizes="152x152" href="/icons/icon.svg">
-	<link rel="apple-touch-icon" sizes="180x180" href="/icons/icon.svg">
-	<link rel="icon" type="image/png" sizes="192x192" href="/icons/icon.svg">
-	<link rel="icon" type="image/png" sizes="32x32" href="/icons/icon.svg">
-	<link rel="icon" type="image/png" sizes="96x96" href="/icons/icon.svg">
-	<link rel="icon" type="image/png" sizes="16x16" href="/icons/icon.svg">
-	<link rel="manifest" href="/icons/manifest.json">
+	<link rel="apple-touch-icon" sizes="57x57" href="../icons/icon.svg">
+	<link rel="apple-touch-icon" sizes="60x60" href="../icons/icon.svg">
+	<link rel="apple-touch-icon" sizes="72x72" href="../icons/icon.svg">
+	<link rel="apple-touch-icon" sizes="76x76" href="../icons/icon.svg">
+	<link rel="apple-touch-icon" sizes="114x114" href="../icons/icon.svg">
+	<link rel="apple-touch-icon" sizes="120x120" href="../icons/icon.svg">
+	<link rel="apple-touch-icon" sizes="144x144" href="../icons/icon.svg">
+	<link rel="apple-touch-icon" sizes="152x152" href="../icons/icon.svg">
+	<link rel="apple-touch-icon" sizes="180x180" href="../icons/icon.svg">
+	<link rel="icon" type="image/png" sizes="192x192" href="../icons/icon.svg">
+	<link rel="icon" type="image/png" sizes="32x32" href="../icons/icon.svg">
+	<link rel="icon" type="image/png" sizes="96x96" href="../icons/icon.svg">
+	<link rel="icon" type="image/png" sizes="16x16" href="../icons/icon.svg">
+	<link rel="manifest" href="../icons/manifest.json">
 	<meta name="msapplication-TileColor" content="#ffffff">
-	<meta name="msapplication-TileImage" content="/icons/icon.svg">
+	<meta name="msapplication-TileImage" content="../icons/icon.svg">
 	<meta name="theme-color" content="#ffffff">
 
 	<!-- 引入 style-->
@@ -53,13 +53,13 @@
 	</script>
 
 	<!-- 引入 self files -->
-	<link rel="stylesheet" href="/css/all.css">
-	<link rel="stylesheet" href="/css/index.css">
-	<script type="text/javascript" src="/js/all.js">
+	<link rel="stylesheet" href="../css/all.css">
+	<link rel="stylesheet" href="../css/index.css">
+	<script type="text/javascript" src="../js/all.js">
 
 	</script>
-	<!-- <script type="text/javascript" src="/js/paula.js"></script> -->
-	<script type="text/javascript" src="/js/index.js">
+	<!-- <script type="text/javascript" src="../js/paula.js"></script> -->
+	<script type="text/javascript" src="../js/index.js">
 
 	</script>
 </head>
@@ -120,7 +120,7 @@
       <div class="col-md-6 " data-aos="fade-up">
         <h1 class="m-5">社團簡介</h1>
         <p class="h4">
-					{{- template "社團簡介"}}
+					{{index . "社團簡介"}}
         </p>
       </div>
     </div>
@@ -141,11 +141,11 @@
         <div class="carousel-item  h-100 active">
           <div class="row h-100">
             <div class="col-md-3 m-auto">
-              <img class="img-fluid rounded-circle" src="/files/社長.jpg" alt="Card image cap">
+              <img class="img-fluid rounded-circle" src="../files/社長.jpg" alt="Card image cap">
             </div>
             <div class="col-md-3 m-auto">
               <p class="h4">
-								{{- template "社長"}}
+                {{index . "社長"}}
 							</p>
             </div>
           </div>
@@ -153,11 +153,11 @@
         <div class="carousel-item h-100">
           <div class="row h-100">
             <div class="col-md-3 m-auto">
-              <img class="img-fluid rounded-circle" src="/files/副社.jpg" alt="Card image cap">
+              <img class="img-fluid rounded-circle" src="../files/副社.jpg" alt="Card image cap">
             </div>
             <div class="col-md-3 m-auto">
               <p class="h4">
-								{{- template "副社"}}
+								{{index . "副社"}}
 								</p>
             </div>
           </div>
@@ -165,11 +165,11 @@
         <div class="carousel-item h-100">
           <div class="row h-100">
             <div class="col-md-3 m-auto">
-              <img class="img-fluid rounded-circle" src="/files/美宣.jpg" alt="Card image cap">
+              <img class="img-fluid rounded-circle" src="../files/美宣.jpg" alt="Card image cap">
             </div>
             <div class="col-md-3 m-auto">
               <p class="h4">
-								{{- template "美宣"}}
+								{{index . "美宣"}}
 								</p>
             </div>
           </div>
@@ -177,11 +177,11 @@
         <div class="carousel-item h-100">
           <div class="row h-100">
             <div class="col-md-3 m-auto">
-              <img class="img-fluid rounded-circle" src="/files/公關.jpg" alt="Card image cap">
+              <img class="img-fluid rounded-circle" src="../files/公關.jpg" alt="Card image cap">
             </div>
             <div class="col-md-3 m-auto">
               <p class="h4">
-								{{- template "公關"}}
+								{{index . "公關"}}
 								</p>
             </div>
           </div>
@@ -189,11 +189,11 @@
         <div class="carousel-item h-100">
           <div class="row h-100">
             <div class="col-md-3 m-auto">
-              <img class="img-fluid rounded-circle" src="/files/總務.jpg" alt="Card image cap">
+              <img class="img-fluid rounded-circle" src="../files/總務.jpg" alt="Card image cap">
             </div>
             <div class="col-md-3 m-auto">
               <p class="h4">
-								{{- template "總務"}}
+								{{index . "總務"}}
 							</p>
             </div>
           </div>
@@ -201,7 +201,7 @@
         <div class="carousel-item h-100">
           <div class="row h-100">
             <div class="col-md-3 m-auto">
-              <img class="img-fluid rounded-circle" src="/files/工程師.png" alt="Card image cap">
+              <img class="img-fluid rounded-circle" src="../files/工程師.png" alt="Card image cap">
             </div>
             <div class="col-md-3 m-auto">
               <p class="h4">我是工程師 Kaiyo Hugo</p>
@@ -222,6 +222,13 @@
   <!-- 公告事項 -->
   <div class="container-fluid hv oh p-3 bg-light" id="declaration">
     <h1 class="text-center" data-aos="fade-up-left">公告事項</h1>
+    {{range $i,$el := index . "公告事項"}}
+      {{if lt $i 5}}
+      <li class="list-group-item h4"><span class="badge bg text-light mx-3">{{$el 0}}</span>
+        <p class="w-75 text-truncate mx-3">{{$el 1}}</p><a role='button' class="btn btn-sm bg text-light float-md-right mx-3">看更多<span aria-hidden="true">&raquo;</span></a>
+      </li>
+      {{end}}
+    {{end}}
     <ul class="list-group list-group-flush text-nowrap shadow rounded h-75 oys" data-aos="fade-up-right">
       <li class="list-group-item h4"><span class="badge bg text-light mx-3">2020/9/30</span>
         <p class="w-75 text-truncate mx-3">網站工程師因為被班對閃瞎狗眼，因此在此誠徵女友(?)</p><a role='button' class="btn btn-sm bg text-light float-md-right mx-3">看更多<span aria-hidden="true">&raquo;</span></a>
@@ -242,7 +249,7 @@
     <h1 class="p-3" data-aos="fade-down">每日一句</h1>
     <div class="d-flex align-items-center h-50">
       <p class="h4" data-aos="flip-down">
-				{{- template "每日一句"}}
+				{{index . "每日一句"}}
 			</p>
 
     </div>
@@ -257,5 +264,4 @@
     </section>
   </footer>
 </body>
-
 </html>

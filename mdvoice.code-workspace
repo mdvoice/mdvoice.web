@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "go"
+		},
+		{
+			"path": "public"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "mdvoice"
+	}
+}

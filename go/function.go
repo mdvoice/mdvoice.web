@@ -1,16 +1,35 @@
 package main
 
-import "fmt"
+import (
+	"bytes"
+	"html/template"
+)
 
 func checknil(e error) {
 	if e != nil {
-		fmt.Printf("error! at %s\n", e.Error())
 		panic(e)
 	}
 }
 func checkstr(e string) {
 	if e == "" {
-		fmt.Printf("error! at '%s' is empty\n", e)
 		panic(e)
 	}
+}
+
+func getvalue(v string) map[string]string {
+	var (
+		null bytes.Buffer
+		temp = make(map[string]string)
+	)
+	file, err := template.New("config").
+		Funcs(template.FuncMap{"kaiyo": func(k string, v string) string {
+			temp[k] = v
+			return ""
+		},
+		}).
+		ParseFiles(v)
+	checknil(err)
+	err = file.Execute(&null, temp)
+	checknil(err)
+	return temp
 }
