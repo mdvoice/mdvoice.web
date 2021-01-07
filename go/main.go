@@ -11,7 +11,9 @@ var (
 	tmpl = "template/"
 	md   = "markdown/"
 	out  = "public/html/"
+	act  = "activity/"
 	des  [][]string
+	err  error
 )
 
 // type index struct {
@@ -22,9 +24,12 @@ var (
 func main() {
 
 	//init
-	err := os.RemoveAll(out)
-	checknil(err)
-	err = os.Mkdir(out, os.ModePerm)
+
+	os.RemoveAll(out + act)
+	os.Remove(out + "index.html")
+
+	// checknil(err)
+	err = os.Mkdir(out+act, os.ModePerm)
 	checknil(err)
 
 	// b, err := json.MarshalIndent(value, "", "  ")
@@ -35,15 +40,16 @@ func main() {
 	checknil(err)
 	// news := make([]string, len(mds))
 	for i, el := range mds {
+		tmp := out + act + el.Name()
 		mdfile := md + "活動/" + el.Name() + "/index.md"
 		value := getvalue(mdfile)
 		file, err := template.New("tmpl").
 			Funcs(template.FuncMap{"kaiyo": func() string { return "" }}).
 			ParseFiles(tmpl+"activity.html", mdfile)
 		checknil(err)
-		err = os.Mkdir(out+el.Name(), os.ModePerm)
+		err = os.Mkdir(tmp, os.ModePerm)
 		checknil(err)
-		put, err := os.Create(out + el.Name() + "/index.html")
+		put, err := os.Create(tmp + "/index.html")
 		checknil(err)
 		err = file.Execute(put, value)
 		checknil(err)
