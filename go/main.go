@@ -25,22 +25,20 @@ func main() {
 
 	//init
 
-	os.RemoveAll(out + act)
+	os.RemoveAll(out + "activity")
 	os.Remove(out + "index.html")
+	os.Remove(out + "sitemap.xml")
 
 	// checknil(err)
 	err = os.Mkdir(out+act, os.ModePerm)
 	checknil(err)
 
-	// b, err := json.MarshalIndent(value, "", "  ")
-	// checknil(err)
-	// fmt.Print(string(b))
-
+	//activity
 	mds, err := ioutil.ReadDir(md + "活動/")
 	checknil(err)
-	// news := make([]string, len(mds))
+
 	for i, el := range mds {
-		tmp := out + act + el.Name()
+		tmp := out + act + el.Name() + "/"
 		mdfile := md + "活動/" + el.Name() + "/index.md"
 		value := getvalue(mdfile)
 		file, err := template.New("tmpl").
@@ -72,5 +70,13 @@ func main() {
 	err = file.Execute(put, exe)
 	checknil(err)
 	fmt.Printf("index done! \n")
+
+	file, err = template.ParseFiles(tmpl + "sitemap.xml")
+	checknil(err)
+	put, err = os.Create(out + "sitemap.xml")
+	checknil(err)
+	err = file.Execute(put, des)
+	checknil(err)
+	fmt.Printf("sitemap done! \n")
 
 }
