@@ -16,18 +16,13 @@ var (
 	err  error
 )
 
-// type index struct {
-// 	首頁 map[string]string
-// 	公告 []interface{}
-// }
-
 func main() {
 
 	//init
 
 	os.RemoveAll(out + "activity")
 	os.Remove(out + "index.html")
-	os.Remove(out + "sitemap.xml")
+	os.Remove("./public/sitemap.xml")
 
 	// checknil(err)
 	err = os.Mkdir(out+act, os.ModePerm)
@@ -73,7 +68,7 @@ func main() {
 
 	file, err = template.ParseFiles(tmpl + "sitemap.xml")
 	checknil(err)
-	put, err = os.Create(out + "sitemap.xml")
+	put, err = os.Create("public/sitemap.xml")
 	checknil(err)
 	err = file.Execute(put, des)
 	checknil(err)
