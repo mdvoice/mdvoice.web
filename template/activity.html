@@ -7,8 +7,16 @@
       content="width=device-width,initial-scale=1.0,shrink-to-fit=no"
     />
     <meta charset="utf-8" />
-    <title>{{index . "標題"}}</title>
     <meta name="description" content="{{index . "簡介"}}">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "NewsArticle",
+        "headline": "{{index . "ISO"}}",
+        "datePublished": "2015-02-05T08:00:00+08:00"
+      }
+    </script>
+    <title>{{index . "標題"}}</title>
 
     <!-- 設定 icon -->
     <link rel="apple-touch-icon" sizes="57x57" href="../../../icons/icon.svg" />
@@ -161,7 +169,7 @@
         </ul>
       </nav>
     </div>
-    <div class="container text-light w-100 oh py-5 my-5" id="md">
+    <div class="container text-light w-100 oh mnhv py-5 my-5" id="md">
       {{- template "內容"}}
     </div>
     <!-- 頁尾 -->
