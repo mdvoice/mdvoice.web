@@ -1,3 +1,133 @@
-.icon{width:80vmin;max-height:100vmin;-webkit-animation:icon 10s both paused;animation:icon 10s both paused}.water path{fill:none;stroke:none;stroke-linecap:round;stroke-width:3;stroke-dasharray:20;-webkit-animation:draw 5s 4.5s linear infinite,fill-d 1.5s 4.5s forwards;animation:draw 5s 4.5s linear infinite,fill-d 1.5s 4.5s forwards}.word path{fill:none;stroke:#000;-webkit-animation:word 4s 1s ease-out,fill-w .8s 4.3s forwards;animation:word 4s 1s ease-out,fill-w .8s 4.3s forwards;stroke-dasharray:190;stroke-dashoffset:190}#about .fbg{background-image:url(/files/about.jpg)}#member .carousel-item img{-webkit-transform:scale(0);transform:scale(0);-webkit-transition:.7s;transition:.7s}#member .carousel-item p::before{content:"";position:absolute;right:0;background-color:#1e4e76;width:100%;height:100%;-webkit-transition:1s .5s;transition:1s .5s}#member .carousel-item.active img{-webkit-transform:scale(1);transform:scale(1)}#member .carousel-item.active p::before{width:0}#sentence p::before{content:"";position:absolute;right:0;background-color:#1e4e76;width:100%;height:100%;-webkit-transition:1s .5s;transition:1s .5s}#sentence p.aos-animate::before{width:0}@-webkit-keyframes draw{from{stroke-dashoffset:0}to{stroke-dashoffset:-200}}@keyframes draw{from{stroke-dashoffset:0}to{stroke-dashoffset:-200}}@-webkit-keyframes word{from{stroke-dashoffset:190}to{stroke-dashoffset:0}}@keyframes word{from{stroke-dashoffset:190}to{stroke-dashoffset:0}}@-webkit-keyframes fill-w{from{fill:#f8f9fa;stroke:#002c70}to{fill:#002c70;stroke:none}}@keyframes fill-w{from{fill:#f8f9fa;stroke:#002c70}to{fill:#002c70;stroke:none}}@-webkit-keyframes fill-d{from{stroke:#f8f9fa}to{stroke:#b2dbff}}@keyframes fill-d{from{stroke:#f8f9fa}to{stroke:#b2dbff}}
+.icon {
+  width: 80vmin;
+  max-height: 100vmin;
+  -webkit-animation: icon 10s both paused;
+          animation: icon 10s both paused;
+}
 
+.water path {
+  fill: none;
+  stroke: none;
+  stroke-linecap: round;
+  stroke-width: 3;
+  stroke-dasharray: 20;
+  -webkit-animation: draw 5s 4.5s linear infinite, fill-d 1.5s 4.5s forwards;
+          animation: draw 5s 4.5s linear infinite, fill-d 1.5s 4.5s forwards;
+}
+
+.word path {
+  fill: none;
+  stroke: #000000;
+  -webkit-animation: word 4s 1s ease-out, fill-w 0.8s 4.3s forwards;
+          animation: word 4s 1s ease-out, fill-w 0.8s 4.3s forwards;
+  stroke-dasharray: 190;
+  stroke-dashoffset: 190;
+}
+
+#about .fbg {
+  background-image: url(/files/about.jpg);
+}
+
+#member .carousel-item img {
+  transform: scale(0);
+  transition: 0.7s;
+}
+#member .carousel-item p::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  background-color: #1e4e76;
+  width: 100%;
+  height: 100%;
+  transition: 1s 0.5s;
+}
+#member .carousel-item.active img {
+  transform: scale(1);
+}
+#member .carousel-item.active p::before {
+  width: 0;
+}
+
+#sentence p::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  background-color: #1e4e76;
+  width: 100%;
+  height: 100%;
+  transition: 1s 0.5s;
+}
+#sentence p.aos-animate::before {
+  width: 0;
+}
+
+@-webkit-keyframes draw {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: -200;
+  }
+}
+
+@keyframes draw {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: -200;
+  }
+}
+@-webkit-keyframes word {
+  from {
+    stroke-dashoffset: 190;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes word {
+  from {
+    stroke-dashoffset: 190;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@-webkit-keyframes fill-w {
+  from {
+    fill: #f8f9fa;
+    stroke: #002c70;
+  }
+  to {
+    fill: #002c70;
+    stroke: none;
+  }
+}
+@keyframes fill-w {
+  from {
+    fill: #f8f9fa;
+    stroke: #002c70;
+  }
+  to {
+    fill: #002c70;
+    stroke: none;
+  }
+}
+@-webkit-keyframes fill-d {
+  from {
+    stroke: #f8f9fa;
+  }
+  to {
+    stroke: #b2dbff;
+  }
+}
+@keyframes fill-d {
+  from {
+    stroke: #f8f9fa;
+  }
+  to {
+    stroke: #b2dbff;
+  }
+}
 /*# sourceMappingURL=index.css.map */

@@ -1,3 +1,82 @@
-.fbg{background-position:center;background-repeat:no-repeat;background-size:cover;background-attachment:fixed}#open,.show{height:0;width:0;overflow:hidden}#nav{-webkit-transition:0.6s;transition:0.6s}@media (max-width: 991.98px){#nav{height:100vh;width:0;opacity:0}#nav ul{height:100vh}#nav a{white-space:nowrap}#open:checked ~ #nav{width:100%;opacity:1}.show{height:auto !important;width:auto !important}}label.btn{position:fixed}*{font-family:Microsoft YaHei}.hv{height:100vh}.oh{overflow:hidden}.oys{overflow-y:scroll}.bg{background-color:#1e4e76 !important}.nav-link.active{background-color:#1e4e76 !important}.fbg{position:absolute;z-index:0;-webkit-filter:blur(5px) opacity(0.5);filter:blur(5px) opacity(0.5)}.shadow{-webkit-box-shadow:-2px -2px 8px #fff,-2px -2px 12px rgba(255,255,255,0.5),inset 2px 2px 4px rgba(255,255,255,0.1),2px 2px 8px rgba(0,0,0,0.15);box-shadow:-2px -2px 8px #fff,-2px -2px 12px rgba(255,255,255,0.5),inset 2px 2px 4px rgba(255,255,255,0.1),2px 2px 8px rgba(0,0,0,0.15)}
+.fbg {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
 
+#open, .show {
+  height: 0;
+  width: 0;
+  overflow: hidden;
+}
+
+#nav {
+  transition: 0.6s;
+}
+
+@media (max-width: 991.98px) {
+  #nav {
+    height: 100vh;
+    width: 0;
+    opacity: 0;
+  }
+  #nav ul {
+    height: 100vh;
+  }
+  #nav a {
+    white-space: nowrap;
+  }
+
+  #open:checked ~ #nav {
+    width: 100%;
+    opacity: 1;
+  }
+
+  .show {
+    height: auto !important;
+    width: auto !important;
+  }
+}
+label.btn {
+  position: fixed;
+}
+
+* {
+  font-family: Microsoft YaHei;
+}
+
+.hv {
+  height: 100vh;
+}
+
+.oh {
+  overflow: hidden;
+}
+
+.oys {
+  overflow-y: scroll;
+}
+
+.bg {
+  background-color: #1e4e76 !important;
+}
+
+.nav-link.active {
+  background-color: #1e4e76 !important;
+}
+
+.fbg {
+  position: absolute;
+  z-index: 0;
+  filter: blur(5px) opacity(0.5);
+}
+
+.shadow {
+  box-shadow: -2px -2px 8px white, -2px -2px 12px rgba(255, 255, 255, 0.5), inset 2px 2px 4px rgba(255, 255, 255, 0.1), 2px 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.text-rwd {
+  font-size: 90vmin;
+}
 /*# sourceMappingURL=all.css.map */
