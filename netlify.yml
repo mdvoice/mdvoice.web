@@ -1,6 +1,0 @@
-redirects:
-  - from: "/"
-    to: "/html/"
-  - from: "/*"
-    to: "/html/404.html"
-    status: 404
