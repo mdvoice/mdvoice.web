@@ -1,6 +1,6 @@
 [[redirects]]
 from = "/"
-status = 200
+status = 301
 to = "/html/"
 [[redirects]]
 from = "/*"
