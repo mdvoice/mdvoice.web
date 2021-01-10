@@ -45,7 +45,7 @@ func main() {
 		checknil(err)
 		put, err := os.Create(tmp + "/index.html")
 		checknil(err)
-		value["ISO"] = strings.Replace(value["標題"], " ", "-", 2)
+		value["ISO"] = strings.Replace(el.Name(), " ", "-", 2)
 		err = file.Execute(put, value)
 		checknil(err)
 		des = append(des, []string{el.Name(), value["簡介"]})
