@@ -125,14 +125,16 @@
     </div>
     <div class="text-center text-light my-5"><h1>公告列表</h1></div>
     <div class="container text-light w-100 oh mnhv rounded my-1 h5" id="md">
-      {{range $i,$el := . }}
-      <li class="list-group-item">
-        <span class="badge bg text-light">{{index $el 0}}</span>
-        <a href="./activity/{{index $el 1}}/" role="button" class="">
-          {{index $el 1}}
-        </a>
-      </li>
-      {{end}}
+      <ol class="list-group">
+        {{range $i,$el := . }}
+        <li class="list-group-item">
+          <span class="badge bg text-light">{{index $el 0}}</span>
+          <a href="./activity/{{index $el 1}}/" role="button" class="">
+            {{index $el 1}}
+          </a>
+        </li>
+        {{end}}
+      </ol>
     </div>
     <!-- 頁尾 -->
     <footer
