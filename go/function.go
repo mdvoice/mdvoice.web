@@ -3,6 +3,7 @@ package main
 import (
 	"bytes"
 	"html/template"
+	"strings"
 )
 
 func checknil(e error) {
@@ -31,5 +32,8 @@ func getvalue(v string) map[string]string {
 	checknil(err)
 	err = file.Execute(&null, temp)
 	checknil(err)
+	for i, el := range temp {
+		temp[i] = strings.Replace(el, "\n", "", -1)
+	}
 	return temp
 }

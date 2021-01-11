@@ -48,15 +48,19 @@ func main() {
 		value["ISO"] = strings.Replace(el.Name(), " ", "-", 2)
 		err = file.Execute(put, value)
 		checknil(err)
-		des = append(des, []string{el.Name(), value["簡介"]})
+		des = append([][]string{{el.Name(), value["簡介"]}}, des...)
 		fmt.Printf("activity done! %d / %d \n", i+1, len(mds))
 	}
 
+	//home
 	file, err := template.ParseFiles(tmpl + "index.html")
 	checknil(err)
 	value := getvalue(md + "首頁.gtpl")
 	put, err := os.Create(out + "index.html")
 	checknil(err)
+
+	// sort.Sort(sort.Reverse(des))
+
 	exe := struct {
 		Home map[string]string
 		News [][]string
@@ -68,6 +72,7 @@ func main() {
 	checknil(err)
 	fmt.Printf("index done! \n")
 
+	//sitemap
 	file, err = template.ParseFiles(tmpl + "sitemap.xml")
 	checknil(err)
 	put, err = os.Create("public/sitemap.xml")
