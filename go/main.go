@@ -23,6 +23,7 @@ func main() {
 
 	os.RemoveAll(out + "activity")
 	os.Remove(out + "index.html")
+	os.Remove(out + "list.html")
 	os.Remove("./public/sitemap.xml")
 
 	// checknil(err)
@@ -48,7 +49,7 @@ func main() {
 		value["ISO"] = strings.Replace(el.Name(), " ", "-", 2)
 		err = file.Execute(put, value)
 		checknil(err)
-		des = append([][]string{{el.Name(), value["簡介"]}}, des...)
+		des = append([][]string{{el.Name(), value["標題"], value["簡介"]}}, des...)
 		fmt.Printf("activity done! %d / %d \n", i+1, len(mds))
 	}
 
@@ -58,9 +59,6 @@ func main() {
 	value := getvalue(md + "首頁.gtpl")
 	put, err := os.Create(out + "index.html")
 	checknil(err)
-
-	// sort.Sort(sort.Reverse(des))
-
 	exe := struct {
 		Home map[string]string
 		News [][]string
@@ -71,6 +69,15 @@ func main() {
 	err = file.Execute(put, exe)
 	checknil(err)
 	fmt.Printf("index done! \n")
+
+	//list
+	file, err = template.ParseFiles(tmpl + "list.html")
+	checknil(err)
+	put, err = os.Create(out + "list.html")
+	checknil(err)
+	err = file.Execute(put, des)
+	checknil(err)
+	fmt.Printf("list done! \n")
 
 	//sitemap
 	file, err = template.ParseFiles(tmpl + "sitemap.xml")
