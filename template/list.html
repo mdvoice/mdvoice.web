@@ -100,13 +100,13 @@
           class="nav nav-pills justify-content-center align-items-center flex-column flex-md-row"
         >
           <li class="nav-item my-auto my-md-0 p-2">
-            <a href="../index.html" class="nav-link h4">首頁</a>
+            <a href="index.html" class="nav-link h4">首頁</a>
           </li>
           <li class="nav-item my-auto my-md-0 p-2">
-            <a href="../list.html" class="nav-link h4">公告列表</a>
+            <a href="list.html" class="nav-link h4">公告列表</a>
           </li>
           <li class="nav-item my-auto my-md-0 p-2">
-            <a href="../search.html" class="nav-link h4">搜尋公告</a>
+            <a href="search.html" class="nav-link h4">搜尋公告</a>
           </li>
           <li class="nav-item my-auto my-md-0 p-2">
             <iframe
@@ -123,9 +123,9 @@
         </ul>
       </nav>
     </div>
-    <div class="text-center text-light my-5"><h1>公告列表</h1></div>
-    <div class="container text-light w-100 oh mnhv rounded my-1 h5" id="md">
-      <ol class="list-group">
+    <div class="container text-light w-100 oh mnhv py-5 my-5 h5">
+      <div class="text-center"><h1>公告列表</h1></div>
+      <ol class="list-group rounded">
         {{range $i,$el := . }}
         <li class="list-group-item">
           <span class="badge bg text-light">{{index $el 0}}</span>
