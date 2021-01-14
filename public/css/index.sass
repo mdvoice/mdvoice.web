@@ -18,7 +18,7 @@
   stroke-dashoffset: 190
 #about
   // &::before
-    background-color: $bg
+  background-color: $bg
   .fbg
     background-image: url(/files/about.jpg)
 #member .carousel-item
@@ -46,13 +46,8 @@
     background-color: $bg
     width: 100%
     height: 100%
-    transition: 1s 0.5s
   &.aos-animate::before
-    width: 0
-
-
-
-
+    animation: sentence 1s 0.5s both
 @keyframes draw
   from
     stroke-dashoffset: 0
@@ -75,8 +70,8 @@
     stroke: #f8f9fa
   to
     stroke: #b2dbff
-// @keyframes icon
+@keyframes sentence
   0%
-    transform: scale(1)
+    width: 100%
   100%
-    transform: scale(3)
+    width: 0

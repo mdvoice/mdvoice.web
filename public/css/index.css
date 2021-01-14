@@ -24,6 +24,9 @@
   stroke-dashoffset: 190;
 }
 
+#about {
+  background-color: #1e4e76;
+}
 #about .fbg {
   background-image: url(/files/about.jpg);
 }
@@ -55,10 +58,10 @@
   background-color: #1e4e76;
   width: 100%;
   height: 100%;
-  transition: 1s 0.5s;
 }
 #sentence p.aos-animate::before {
-  width: 0;
+  -webkit-animation: sentence 1s 0.5s both;
+          animation: sentence 1s 0.5s both;
 }
 
 @-webkit-keyframes draw {
@@ -128,6 +131,22 @@
   }
   to {
     stroke: #b2dbff;
+  }
+}
+@-webkit-keyframes sentence {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+@keyframes sentence {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
   }
 }
 /*# sourceMappingURL=index.css.map */
