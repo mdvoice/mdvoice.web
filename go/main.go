@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"html/template"
+	"io"
 	"io/ioutil"
 	"os"
 	"strings"
@@ -50,6 +51,20 @@ func main() {
 		err = file.Execute(put, value)
 		checknil(err)
 		des = append([][]string{{el.Name(), value["標題"], value["簡介"]}}, des...)
+		copy, err := ioutil.ReadDir(md + "活動/" + el.Name() + "/")
+		checknil(err)
+		for _, el0 := range copy {
+			if el0.Name() != "index.md" {
+				src, err := os.Open(md + "活動/" + el.Name() + "/" + el0.Name())
+				checknil(err)
+				defer src.Close()
+				dis, err := os.Create(tmp + "/" + el0.Name())
+				checknil(err)
+				defer dis.Close()
+				_, err = io.Copy(dis, src)
+				checknil(err)
+			}
+		}
 		fmt.Printf("activity done! %d / %d \n", i+1, len(mds))
 	}
 
